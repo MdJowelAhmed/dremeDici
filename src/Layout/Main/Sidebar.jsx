@@ -159,6 +159,25 @@ const Sidebar = () => {
             </Link>
           ),
         },
+        {
+          key: "/terms-and-conditions",
+          label: (
+            <Link
+              to="/terms-and-conditions"
+              className="text-white hover:text-white"
+            >
+              Terms And Condition
+            </Link>
+          ),
+        },
+        {
+          key: "/privacy-policy",
+          label: (
+            <Link to="/privacy-policy" className="text-white hover:text-white">
+              Privacy Policy
+            </Link>
+          ),
+        },
       ],
     },
     {

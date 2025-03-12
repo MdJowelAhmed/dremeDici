@@ -5,94 +5,112 @@ import { SearchOutlined } from "@ant-design/icons";
 // Sample Data with Unique Keys
 const dataSource = [
   {
-    key: "1",
-    orderId: "#123456",
-    retailerName: "Alice Johnson",
-    salesName: "Alice Johnson",
-    amount: "$2500",
-    status: "Pending",
+    rank: 1,
+    salesRepName: "Alice Johnson",
+    totalSales: 50000,
+    commission: 7500,
+    tier: "Gold",
+    status: "Active",
   },
   {
-    key: "2",
-    orderId: "#123457",
-    retailerName: "Alice Johnson",
-    salesName: "Alice Johnson",
-    amount: "$2500",
-    status: "Pending",
+    rank: 2,
+    salesRepName: "John Doe",
+    totalSales: 45000,
+    commission: 6800,
+    tier: "Gold",
+    status: "Active",
   },
   {
-    key: "3",
-    orderId: "#123458",
-    retailerName: "Alice Johnson",
-    salesName: "Alice Johnson",
-    amount: "$2500",
-    status: "Completed",
+    rank: 3,
+    salesRepName: "Emma Watson",
+    totalSales: 42000,
+    commission: 6500,
+    tier: "Silver",
+    status: "Active",
   },
   {
-    key: "4",
-    orderId: "#123459",
-    retailerName: "Alice Jowel",
-    salesName: "Alice Johnson",
-    amount: "$2500",
-    status: "Completed",
+    rank: 4,
+    salesRepName: "Michael Clark",
+    totalSales: 39000,
+    commission: 6100,
+    tier: "Silver",
+    status: "Active",
   },
   {
-    key: "5",
-    orderId: "#123460",
-    retailerName: "John Doe",
-    salesName: "Alice Johnson",
-    amount: "$3200",
-    status: "Pending",
+    rank: 5,
+    salesRepName: "Sophia Lee",
+    totalSales: 37000,
+    commission: 5700,
+    tier: "Silver",
+    status: "Active",
   },
   {
-    key: "6",
-    orderId: "#123461",
-    retailerName: "Emma Watson",
-    salesName: "Alice Johnson",
-    amount: "$4100",
-    status: "Completed",
+    rank: 6,
+    salesRepName: "David Miller",
+    totalSales: 35000,
+    commission: 5300,
+    tier: "Bronze",
+    status: "Inactive",
   },
   {
-    key: "7",
-    orderId: "#123462",
-    retailerName: "Robert Brown",
-    salesName: "Alice Johnson",
-    amount: "$1800",
-    status: "Pending",
+    rank: 7,
+    salesRepName: "Robert Brown",
+    totalSales: 33000,
+    commission: 5000,
+    tier: "Bronze",
+    status: "Inactive",
   },
   {
-    key: "8",
-    orderId: "#123463",
-    retailerName: "Sophia Lee",
-    salesName: "Alice Johnson",
-    amount: "$2250",
-    status: "Completed",
+    rank: 8,
+    salesRepName: "Liam Wilson",
+    totalSales: 31000,
+    commission: 4800,
+    tier: "Bronze",
+    status: "Inactive",
   },
   {
-    key: "9",
-    orderId: "#123464",
-    retailerName: "Michael Clark",
-    salesName: "Alice Johnson",
-    amount: "$2750",
-    status: "Pending",
+    rank: 9,
+    salesRepName: "Olivia Martinez",
+    totalSales: 29000,
+    commission: 4500,
+    tier: "Bronze",
+    status: "Inactive",
   },
   {
-    key: "10",
-    orderId: "#123465",
-    retailerName: "David Miller",
-    salesName: "Alice Johnson",
-    amount: "$3900",
-    status: "Completed",
+    rank: 10,
+    salesRepName: "Ethan Taylor",
+    totalSales: 27000,
+    commission: 4200,
+    tier: "Bronze",
+    status: "Inactive",
   },
 ];
 
+
 const columns = [
-  { title: "Order ID", dataIndex: "orderId", key: "orderId" },
-  { title: "Retailer Name", dataIndex: "retailerName", key: "retailerName" },
-  { title: "Sales Name", dataIndex: "salesName", key: "salesName" },
-  { title: "Amount", dataIndex: "amount", key: "amount" },
-  { title: "Status", dataIndex: "status", key: "status" },
+  { title: "Rank", dataIndex: "rank", key: "rank", align: "center" },
+  {
+    title: "Sales Rep Name",
+    dataIndex: "salesRepName",
+    key: "salesRepName",
+    align: "center",
+  },
+  {
+    title: "Total Sales",
+    dataIndex: "totalSales",
+    key: "totalSales",
+    align: "center",
+  },
+  {
+    title: "Commission",
+    dataIndex: "commission",
+    key: "commission",
+    align: "center",
+  },
+  { title: "Tier", dataIndex: "tier", key: "tier", align: "center" },
+  { title: "Status", dataIndex: "status", key: "status", align: "center" },
 ];
+
 
 const SalesLeaderBoard = () => {
   const [searchText, setSearchText] = useState("");
@@ -103,9 +121,9 @@ const SalesLeaderBoard = () => {
   // Filtering the data based on the search text
   const filteredData = dataSource.filter(
     (item) =>
-      item.orderId.toLowerCase().includes(searchText.toLowerCase()) ||
-      item.retailerName.toLowerCase().includes(searchText.toLowerCase()) ||
-      item.salesName.toLowerCase().includes(searchText.toLowerCase())
+      // item.rank.toLowerCase().includes(searchText.toLowerCase()) ||
+      item.salesRepName.toLowerCase().includes(searchText.toLowerCase()) ||
+      item.salesRepName.toLowerCase().includes(searchText.toLowerCase())
   );
 
   return (

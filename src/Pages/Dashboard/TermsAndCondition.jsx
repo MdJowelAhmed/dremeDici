@@ -3,6 +3,7 @@ import JoditEditor from 'jodit-react';
 import { Button } from 'antd';
 import { useTermsAndConditionQuery, useUpdateTermsAndConditionsMutation } from "../../redux/apiSlices/termsAndConditionSlice"
 import toast from 'react-hot-toast';
+import GradientButton from '../../components/common/GradiantButton';
 
 const TermsAndCondition = () => {
   const editor = useRef(null)
@@ -34,12 +35,16 @@ const TermsAndCondition = () => {
 
   return (
     <div>
-          <JoditEditor
-            ref={editor}
-            value={content}
-            onChange={newContent => { setContent(newContent) }}
-          />
-          <Button onClick={aboutDataSave} block style={{ marginTop: "30px", border: "none",  backgroundColor: "#6C57EC", color: "#fff", height: "40px" }}>save</Button>
+      <div className='mb-6'>
+        <JoditEditor
+          ref={editor}
+          value={content}
+          onChange={(newContent) => {
+            setContent(newContent);
+          }}
+        />
+      </div>
+      <GradientButton onClick={aboutDataSave}>save</GradientButton>
     </div>
   );
 };

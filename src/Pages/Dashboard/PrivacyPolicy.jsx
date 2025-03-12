@@ -3,6 +3,7 @@ import JoditEditor from 'jodit-react';
 import { Button } from 'antd';
 import { usePrivacyPolicyQuery, useUpdatePricyPolicyMutation } from "../../redux/apiSlices/privacyPolicySlice"
 import toast from 'react-hot-toast';
+import GradientButton from '../../components/common/GradiantButton';
 
 const PrivacyPolicy = () => {
   const editor = useRef(null)
@@ -35,27 +36,19 @@ const PrivacyPolicy = () => {
 
   return (
     <div>
-      
-      <JoditEditor
-            ref={editor}
-            value={content}
+      <div className='mb-6'>
+        <JoditEditor
+          ref={editor}
+          value={content}
+          onChange={(newContent) => {
+            setContent(newContent);
+          }}
+        />
+      </div>
 
-            onChange={newContent => { setContent(newContent) }}
-          />
-
-          <Button onClick={aboutDataSave} 
-            block 
-            style={{
-               marginTop: "30px", 
-               backgroundColor: "#6C57EC", 
-               color: "#fff", 
-               height: "40px",
-               outline: "none",
-               border: "none" 
-            }}
-          >
-            {isLoading? "Updating..." : "Update"}
-          </Button>
+      <GradientButton onClick={aboutDataSave}>
+        {isLoading ? "Updating..." : "Update"}
+      </GradientButton>
     </div>
   );
 };
