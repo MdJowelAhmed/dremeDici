@@ -14,6 +14,7 @@ import Frame4 from "../../assets/Frame4.png";
 import Frame5 from "../../assets/Frame5.png";
 import Frame6 from "../../assets/Frame6.png";
 import Frame7 from "../../assets/Frame7.png";
+import Frame8 from "../../assets/Frame8.png";
 import { LuChartNoAxesCombined } from "react-icons/lu";
 
 
@@ -39,8 +40,8 @@ const Sidebar = () => {
           style={{
             width: "24px",
             height: "24px",
-            filter: "invert(1) grayscale(1)", // Black by default
-            transition: "filter 0.3s ease", // Smooth transition for hover effect
+            filter: "invert(1) grayscale(1)",
+            transition: "filter 0.3s ease",
           }}
           className="icon-image"
         />
@@ -132,6 +133,23 @@ const Sidebar = () => {
         />
       ),
       label: <Link to="/loyaltyProgram">Loyalty Program</Link>,
+    },
+    {
+      key: "/subsciption",
+      icon: (
+        <img
+          src={Frame8}
+          alt="Retailer Icon"
+          style={{
+            width: "24px",
+            height: "24px",
+            filter: "invert(1) grayscale(1)", // Black by default
+            transition: "filter 0.3s ease", // Smooth transition for hover effect
+          }}
+          className="icon-image"
+        />
+      ),
+      label: <Link to="/subsciption">Subsciption Management</Link>,
     },
 
     {

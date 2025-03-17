@@ -76,13 +76,7 @@ const RetailerManageTable = () => {
      dataIndex: "accountStatus",
      key: "accountStatus",
      align: "center",
-     render: (status) => (
-       <span
-         className={status === "Active" ? "text-green-500 font-bold" : "text-red-500"}
-       >
-         {status}
-       </span>
-     ),
+    
    },
    {
      title: "Action",

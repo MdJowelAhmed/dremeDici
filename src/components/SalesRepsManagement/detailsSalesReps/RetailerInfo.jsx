@@ -142,7 +142,7 @@ const RetailerInfo = ({ salesRep }) => {
 
   return (
     <div>
-      <div className="flex justify-between mb-10 mt-16">
+      <div className="flex justify-between mb-10 mt-10">
         <h1 className="text-2xl font-bold">Sales Rep Details</h1>
         <div className="flex gap-4">
           <GradientButton

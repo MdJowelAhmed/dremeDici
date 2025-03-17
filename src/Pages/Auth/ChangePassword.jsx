@@ -50,93 +50,104 @@ const ChangePassword = () => {
   };
 
   return (
-        <div>
+    <div>
+      <Form
+        layout="vertical"
+        form={form}
+        onFinish={onFinish}
+        className="w-[50%] mx-auto mt-20"
+      >
+        <Form.Item
+          name="currentPass"
+          label={<p>Current Password</p>}
+          rules={[
+            {
+              required: true,
+              message: "Please Enter Current Password!",
+            },
+          ]}
+        >
+          <Input.Password
+            style={{ background: "transparent" }}
+            placeholder="Enter current password"
+            className="h-12 bg-transparent hover:bg-transparent focus:bg-transparent placeholder:text-gray-500"
+          />
+        </Form.Item>
 
-          <Form
-                                layout='vertical'
-                                form={form}
-                                onFinish={onFinish}
-                                className='w-[50%] mx-auto mt-20'
-                            >
-                                    <Form.Item 
-                                        name="currentPass"
-                                        label={<p>Current Password</p>}
-                                        rules={[
-                                            {
-                                                required: true,
-                                                message: "Please Enter Current Password!"
-                                            }
-                                        ]}
-                                    >
-                                        <Input.Password 
-                                        style={{background: "transparent"}}
-                                            placeholder="Enter current password"
-                                            className="h-12 bg-transparent hover:bg-transparent focus:bg-transparent placeholder:text-gray-500"
-                                        />
-                                    </Form.Item>
+        <Form.Item
+          name="newPass"
+          rules={[
+            {
+              required: true,
+              message: "Please Enter New Password!",
+            },
+          ]}
+          label={<p>New Password</p>}
+          style={{ marginBottom: newPassError ? 0 : null }}
+        >
+          <Input.Password
+            style={{ background: "transparent" }}
+            placeholder="Enter current password"
+            className="h-12 bg-transparent hover:bg-transparent focus:bg-transparent placeholder:text-gray-500"
+          />
+        </Form.Item>
+        {newPassError && (
+          <label style={{ display: "block", color: "red" }} htmlFor="error">
+            {newPassError}
+          </label>
+        )}
 
+        <Form.Item
+          label={<p>Confirm Password</p>}
+          name="confirmPass"
+          rules={[
+            {
+              required: true,
+              message: "Please Enter Confirm Password!",
+            },
+          ]}
+          style={{ marginBottom: conPassError ? 0 : null }}
+        >
+          <Input.Password
+            style={{ background: "transparent" }}
+            placeholder="Enter current password"
+            className="h-12 bg-transparent hover:bg-transparent focus:bg-transparent placeholder:text-gray-500"
+          />
+        </Form.Item>
+        {conPassError && (
+          <label style={{ display: "block", color: "red" }} htmlFor="error">
+            {conPassError}
+          </label>
+        )}
 
-                                    <Form.Item
-                                        name="newPass"
-                                        rules={[
-                                            {
-                                                required: true,
-                                                message: "Please Enter New Password!"
-                                            }
-                                        ]}
-                                        label={<p >New Password</p>}
-                                        style={{ marginBottom: newPassError ? 0 : null }}
-                                    >
-                                        <Input.Password 
-                                        style={{background: "transparent"}}
-                                            placeholder="Enter current password"
-                                            className="h-12 bg-transparent hover:bg-transparent focus:bg-transparent placeholder:text-gray-500"
-                                        />
-                                    </Form.Item>
-                                    { newPassError && <label style={{display: "block", color: "red"}} htmlFor="error">{newPassError}</label>}
+        <Form.Item
+          style={{
+            marginBottom: 0,
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+          }}
+        >
+          <Button
+            htmlType="submit"
+            type="submit"
+            style={{
+              width: "100%",
+              height: 45,
+              color: "white",
+              fontWeight: "400px",
+              fontSize: "18px",
 
-                                    <Form.Item 
-                                        label={<p >Confirm Password</p>}
-                                        name="confirmPass"
-                                        rules={[
-                                            {
-                                                required: true,
-                                                message: "Please Enter Confirm Password!"
-                                            }
-                                        ]}
-                                        style={{ marginBottom: conPassError ? 0 : null }}
-                                    >
-                                        <Input.Password
-                                          style={{background: "transparent"}} 
-                                            placeholder="Enter current password"
-                                            className="h-12 bg-transparent hover:bg-transparent focus:bg-transparent placeholder:text-gray-500"
-                                        />
-                                    </Form.Item>
-                                    { conPassError && <label style={{display: "block", color: "red"}} htmlFor="error">{conPassError}</label>}
-
-                                <Form.Item 
-                                    style={{marginBottom: 0, display: "flex", alignItems: "center", justifyContent: "center"}}
-                                >
-                                    <Button
-                                        
-                                        htmlType="submit"
-                                        block
-                                        style={{
-                                            width : 178,
-                                            height: 48,
-                                            fontWeight: "400px",
-                                            background: "#6C57EC",
-                                            color: "#FCFCFC"
-                                        }}
-                                        className='roboto-medium  text-sm leading-4'
-                                    >
-                                      {isLoading ? "Changing" : "Update"}
-                                    </Button>
-                                </Form.Item>
+              marginTop: 20,
+            }}
+            className="flex items-center justify-center bg-gradient-to-r from-primary  to-secondary rounded-lg"
+          >
+            {isLoading ? "Changing" : "Update"}
+          </Button>
+        </Form.Item>
       </Form>
-
-        </div>
-  )
+    </div>
+  );
 }
 
 export default ChangePassword

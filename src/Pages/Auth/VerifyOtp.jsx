@@ -68,15 +68,17 @@ const VerifyOtp = () => {
         <Form.Item style={{ marginBottom: 0 }}>
           <Button
             htmlType="submit"
+            type="submit"
             style={{
               width: "100%",
-              height: 40,
-              border: "1px solid #d9d9d9",
-              outline: "none",
-              boxShadow: "none",
+              height: 45,
               color: "white",
+              fontWeight: "400px",
+              fontSize: "18px",
+
+              marginTop: 20,
             }}
-            className="bg-gradient-to-r from-primary  to-secondary"
+            className="flex items-center justify-center bg-gradient-to-r from-primary  to-secondary rounded-lg"
           >
             Verify
           </Button>

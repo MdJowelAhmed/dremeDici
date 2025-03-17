@@ -2,16 +2,15 @@ import React from "react";
 import { LuBadgeDollarSign } from "react-icons/lu";
 import { FaUsers } from "react-icons/fa6";
 
-const DetailsCard = () => {
+const SubscriptionCard = () => {
   // Data for cards
   const cardData = [
     { icon: FaUsers, value: "100", label: "Total Sales" },
-    { icon: FaUsers, value: "$12", label: "Total Commission" },
     { icon: LuBadgeDollarSign, value: "$5000", label: "Total Orders" },
   ];
 
   return (
-    <div className="grid grid-cols-3 gap-6 h-[120px] mb-9">
+    <div className="grid grid-cols-4 gap-6 h-[120px] mb-9">
       {cardData.map((data, index) => (
         <SalesRepsCard
           key={index}
@@ -41,4 +40,4 @@ const SalesRepsCard = ({ icon: Icon, value, label }) => {
   );
 };
 
-export default DetailsCard;
+export default SubscriptionCard;
